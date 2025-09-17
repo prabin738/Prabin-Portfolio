@@ -6,6 +6,13 @@ const Header = () => {
   //step 1 after ui toggle menu open/close
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  //state to track contact form is open or not
+  const [contactFormOpen, setContactFormOpen] = useState(false);
+  //function to manage contact form
+  const openContactForm = () => setContactFormOpen(true);
+  const closeContactForm = () => setContactFormOpen(false);
+
   return (
     <header className="absolute w-full z-50 transition-all duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
@@ -169,6 +176,7 @@ const Header = () => {
           </button>
         </div>
       </motion.div>
+      {/* Contact Form  */}
     </header>
   );
 };

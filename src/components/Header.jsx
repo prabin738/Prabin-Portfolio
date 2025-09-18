@@ -102,6 +102,7 @@ const Header = () => {
           </motion.a>
         </div>
         <motion.button
+          onClick={openContactForm}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
@@ -139,7 +140,7 @@ const Header = () => {
         initial={{ opacity: 0, height: 0 }}
         animate={{ opacity: isOpen ? 1 : 0, height: isOpen ? "auto" : 0 }}
         transition={{ duration: 0.5 }}
-        className="md:hidden overflow-hidden bg-gray-800 dark:bg-gray-900 shadow-lg
+        className="lg:hidden overflow-hidden bg-gray-800 dark:bg-gray-900 shadow-lg
       px-4 py-5 space-y-5"
       >
         <nav className="flex flex-col space-y-3">
@@ -177,6 +178,27 @@ const Header = () => {
         </div>
       </motion.div>
       {/* Contact Form  */}
+      {contactFormOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/50 background-blur-sm z-50 
+flex items-center justify-center p-4 "
+        >
+          <div
+            className=" bg-gray-800   dark:bg-gray-800 rounded-xl 
+          shadow-xl w-full max-w-md p-6"
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h1 className="text-2xl font-bold text-gray-300">Get In Touch</h1>
+              <button onClick={closeContactForm}>
+                <FiX className="text-gray-300 w-5 h-5 font-extrabold" />
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      )}
     </header>
   );
 };

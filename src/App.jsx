@@ -1,3 +1,4 @@
+import About from "./components/About";
 import CustomCursor from "./components/CustomCursor";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <HeroSection />
       <CustomCursor />
+      <About />
     </>
   );
 }

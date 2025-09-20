@@ -152,6 +152,7 @@ const Header = () => {
           {["Home", "About", "Projects", "Experience", "Contact", "Tools"].map(
             (item, index) => (
               <a
+                key={item}
                 onClick={toggleMenu}
                 className="text-gray-300 font-medium py-2 text-3xl"
                 href="#"
